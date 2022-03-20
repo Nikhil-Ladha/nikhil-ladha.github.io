@@ -1,14 +1,14 @@
 // Form Submit Confirmation/Error Message
 
-const contact_form = document.getElementById("gform");
-const response_msg = document.querySelector(".form-response");
+const contactForm = document.getElementById("gform");
+const responseMsg = document.querySelector(".form-response");
 
 // TODO: Show error on failure
-const response_error = document.querySelector(".form-response .error-message");
+const responseError = document.querySelector(".form-response .error-message");
 
-contact_form.addEventListener("submit", submitForm);
+contactForm.addEventListener("submit", submitForm);
 
 function submitForm() {
-  contact_form.style.display = "none";
-  response_msg.style.display = "block";
+  contactForm.style.display = "none";
+  responseMsg.style.display = "block";
 }

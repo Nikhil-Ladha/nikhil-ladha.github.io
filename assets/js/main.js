@@ -1,9 +1,4 @@
-/**
-* Template Name: MyResume - v4.0.1
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 (function() {
   "use strict";
 
@@ -262,3 +257,59 @@
   });
 
 })()
+
+// Light/Dark Mode toggle
+
+const heroBgToggle = document.querySelector("#bg-mode");
+const heroBg = document.querySelector("#hero");
+const rootColorSet = document.querySelector(":root");
+
+const rootColors = {
+  "dark": {
+    "--body-text-color": "white",
+    "--body-color": "#060606",
+    "--nav-menu-link-bg": "#f2f3f5",
+    "--header-color": "white",
+    "--para-color": "white",
+    "--link-color": "#52abff",
+    "--link-highlight-color": "#767676",
+    "--footer-bg-color": "#0c0c0c",
+  },
+  "light": {
+    "--body-text-color": "#272829",
+    "--body-color": "#ffffff",
+    "--nav-menu-link-bg": "#e9e9e9",
+    "--header-color": "#45505b",
+    "--para-color": "#45505b",
+    "--link-color": "#0563bb",
+    "--link-highlight-color": "#c7c7c7",
+    "--footer-bg-color": "#f7f8f9",
+  }
+}
+
+heroBgToggle.addEventListener("click", toggleBgImage);
+
+function toggleBgImage() {
+
+  if(heroBgToggle.checked) {
+    heroBg.classList.remove("hero-light");
+    heroBg.classList.add("hero-dark");
+    updateRootColor("dark");
+  } else {
+    heroBg.classList.remove("hero-dark");
+    heroBg.classList.add("hero-light");
+    updateRootColor("light");
+  }
+}
+
+function updateRootColor(bg_mode) {
+
+    rootColorSet.style.setProperty("--body-text-color", rootColors[bg_mode]["--body-text-color"]);
+    rootColorSet.style.setProperty("--body-color", rootColors[bg_mode]["--body-color"]);
+    rootColorSet.style.setProperty("--header-color", rootColors[bg_mode]["--header-color"]);
+    rootColorSet.style.setProperty("--para-color", rootColors[bg_mode]["--para-color"]);
+    rootColorSet.style.setProperty("--link-highlight-color", rootColors[bg_mode]["--link-highlight-color"]);
+    rootColorSet.style.setProperty("--link-color", rootColors[bg_mode]["--link-color"]);
+    rootColorSet.style.setProperty("--footer-bg-color", rootColors[bg_mode]["--footer-bg-color"]);
+    rootColorSet.style.setProperty("--nav-menu-link-bg", rootColors[bg_mode]["--nav-menu-link-bg"]);
+}
