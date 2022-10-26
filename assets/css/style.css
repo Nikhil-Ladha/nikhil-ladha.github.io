@@ -662,7 +662,7 @@ section {
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
-  margin: auto;
+  margin: 2rem auto;
 }
 
 @media screen and (max-width: 992px) {
