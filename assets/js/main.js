@@ -267,23 +267,25 @@ const rootColorSet = document.querySelector(":root");
 const rootColors = {
   "dark": {
     "--body-text-color": "white",
-    "--body-color": "#060606",
+    "--body-color": "#000000",
     "--nav-menu-link-bg": "#f2f3f5",
     "--header-color": "white",
     "--para-color": "white",
     "--link-color": "#52abff",
     "--link-highlight-color": "#767676",
     "--footer-bg-color": "#0c0c0c",
+    "--nav-menu-shadow": "#787878",
   },
   "light": {
     "--body-text-color": "#272829",
-    "--body-color": "#ffffff",
-    "--nav-menu-link-bg": "#e9e9e9",
+    "--body-color": "#f6fcff",
+    "--nav-menu-link-bg": "#ffffff",
     "--header-color": "#45505b",
     "--para-color": "#45505b",
     "--link-color": "#0563bb",
     "--link-highlight-color": "#c7c7c7",
     "--footer-bg-color": "#f7f8f9",
+    "--nav-menu-shadow": "#ebf9ff",
   }
 }
 
@@ -312,4 +314,5 @@ function updateRootColor(bg_mode) {
     rootColorSet.style.setProperty("--link-color", rootColors[bg_mode]["--link-color"]);
     rootColorSet.style.setProperty("--footer-bg-color", rootColors[bg_mode]["--footer-bg-color"]);
     rootColorSet.style.setProperty("--nav-menu-link-bg", rootColors[bg_mode]["--nav-menu-link-bg"]);
+    rootColorSet.style.setProperty("--nav-menu-shadow", rootColors[bg_mode]["--nav-menu-shadow"]);
 }
